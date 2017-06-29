@@ -1,0 +1,20 @@
+machine:
+  xcode:
+    version: 8.3
+  environment:
+    XCODE_SCHEME: SimpleNoteTakingApp
+    XCODE_WORKSPACE: SimpleNoteTakingApp.xcworkspace
+    GYM_CODE_SIGNING_IDENTITY: 'iPhone Distribution: Alex Louey (5B4P3HE559)'
+    FASTLANE_PASSWORD: Appscore1
+dependencies:
+    pre:
+      - sudo gem install fastlane
+deployment:
+  beta:
+    branch: beta
+    commands:
+      - fastlane ios beta
+  release:
+    branch: master
+    commands:
+      - fastlane ios release
